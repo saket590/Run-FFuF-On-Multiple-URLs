@@ -11,10 +11,10 @@ while read -r url; do ffuf -u "$url/FUZZ" -w wordlist.txt -o "$(echo "$url" | se
 ```
 
 **Output Files:**
-example_com.json: Contains the fuzzing results for http://example.com.  \
-test_com_api.json: Contains the fuzzing results for https://test.com/api.  \
-localhost_8080.json: Contains the fuzzing results for http://localhost:8080.   \
-192_168_1_1_admin.json: Contains the fuzzing results for https://192.168.1.1/admin. \
+- example_com.json: Contains the fuzzing results for http://example.com.
+- test_com_api.json: Contains the fuzzing results for https://test.com/api.
+- localhost_8080.json: Contains the fuzzing results for http://localhost:8080.
+- 192_168_1_1_admin.json: Contains the fuzzing results for https://192.168.1.1/admin.
 
 
 ## Method-2 Fuzzing the URLs concurrently:
@@ -35,7 +35,7 @@ cat urls.txt | xargs -P 10 -I {} ffuf -u {}/FUZZ -w wordlist.txt -o "$(echo {} |
 Output filenames: The filenames are sanitized using sed and tr to replace special characters.
 
 **Output Files:**
-example_com.json
-test_com_api.json
-localhost_8080.json
-192_168_1_1_admin.json
+- example_com.json
+- test_com_api.json
+- localhost_8080.json
+- 192_168_1_1_admin.json
